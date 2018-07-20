@@ -38,6 +38,7 @@ app
   .description('View your budget')
   .action(cmd => {
     initiateViewCommand(cmd.all);
+    utils.logState(process.argv[2]);
   });
 app
   .command('pay')
@@ -48,6 +49,7 @@ app
   )
   .action(cmd => {
     utils.dataManager.pay(cmd.reverse);
+    utils.logState(process.argv[2]);
   });
 app
   .command('spend')
@@ -55,6 +57,7 @@ app
   .description('Spend your money, but do so wisely')
   .action(() => {
     initiateSpendCommand();
+    utils.logState(process.argv[2]);
   });
 app
   .command('allocate')
@@ -64,10 +67,10 @@ app
   )
   .action(() => {
     initiateAllocateCommand();
+    utils.logState(process.argv[2]);
   });
 
 app.parse(process.argv);
-utils.logState(process.argv[2]);
 
 ///Utility Functions
 function addBanner() {
