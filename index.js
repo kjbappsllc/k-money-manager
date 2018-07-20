@@ -76,7 +76,7 @@ app.parse(process.argv);
 function addBanner() {
   console.log(
     chalk.blueBright.bold(
-      figlet.textSync('Budget', { horizontalLayout: 'full' })
+      figlet.textSync('KMM', { horizontalLayout: 'full' })
     )
   );
 }

@@ -1,5 +1,5 @@
 {
-  "name": "kMoneyManager",
+  "name": "kmoney-manager",
   "version": "0.1.0",
   "description": "A command-line money management system",
   "main": "index.js",
