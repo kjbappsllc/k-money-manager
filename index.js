@@ -58,8 +58,7 @@ app
   .alias('s')
   .description('Spend your money, but do so wisely')
   .action(() => {
-    initiateSpendCommand();
-    utils.logState(process.argv[2]);
+    initiateSpendCommand()
   });
 app
   .command('allocate')
@@ -201,6 +200,8 @@ function initiateViewCommand(allOptionSet) {
 function initiateSpendCommand() {
   utils.prompts.spend().then(info => {
     utils.dataManager.spend(info.category, info.entry, info.amount);
+    delete info.category
+    utils.logState('spend', info);
   });
 }
 
